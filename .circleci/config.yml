@@ -8,11 +8,11 @@ jobs:
       - checkout
 
       - run:
-        name: コードの取得
-        command: |
-          ls -al
-          echo '^^^That should look familiar^^^'
+          name: コードの取得
+          command: |
+            ls -al
+            echo '^^^That should look familiar^^^'
       - run:
-        name: 独自コンテナで実行
-        command: |
-          node -
+          name: 独自コンテナで実行
+          command: |
+            node -v

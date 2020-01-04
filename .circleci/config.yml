@@ -1,6 +1,7 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/sample
     docker:
       - image: circleci/node:10-browsers
 
@@ -16,3 +17,18 @@ jobs:
           name: 独自コンテナで実行
           command: |
             node -v
+      - run:
+          name: node_modulesのインストール
+          command: |
+            yarn
+  test:
+    docker:
+      - image: circleci/node:10-browsers
+
+    steps:
+      - checkout
+
+      - run:
+          name: テスト
+          command: |
+            yarn lint

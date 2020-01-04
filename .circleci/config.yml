@@ -2,15 +2,17 @@ version: 2
 jobs:
   build:
     docker:
-      - image: debian:stretch
+      - image: circleci/node:10-browsers
 
     steps:
       - checkout
 
       - run:
-          name: Greeting
-          command: echo Hello, world.
-
+        name: コードの取得
+        command: |
+          ls -al
+          echo '^^^That should look familiar^^^'
       - run:
-          name: Print the Current Time
-          command: date
+        name: 独自コンテナで実行
+        command: |
+          node -

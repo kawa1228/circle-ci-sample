@@ -21,13 +21,6 @@ jobs:
           name: node_modulesのインストール
           command: |
             yarn
-  test:
-    docker:
-      - image: circleci/node:10-browsers
-
-    steps:
-      - checkout
-
       - run:
           name: テスト
           command: |
